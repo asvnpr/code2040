@@ -1,4 +1,5 @@
-###post a JSON to code2040, get a string from response, reverse the string and send it back to them
+### post a JSON to code2040, get a JSON with a string (needle) and an array of strings (haystack). 
+### the program finds the index of the needle string in the haystack array and sends it to code2040 for validation
 require 'uri'
 require 'net/http'
 require 'json'
@@ -24,7 +25,7 @@ haystack = JSON.parse(nh_json.body)["haystack"]
 # get the index where needle string is in the haystack array 
 needle_index = haystack.index(needle).to_i
 
-answer = {"token" => "57bbfceb05c5d034b1be3564c22c8c51","needle" => "#{needle_index}"}
+answer = {"token" => "57bbfceb05c5d034b1be3564c22c8c51","needle" => needle_index}
 response = http.post(uri.path, answer.to_json, json_headers)
 
 #check response from http post

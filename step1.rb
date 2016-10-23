@@ -1,3 +1,5 @@
+###simple JSON POST to register with code 2040
+
 require 'uri'
 require 'net/http'
 require 'json'

@@ -1,4 +1,4 @@
-###post a JSON to code2040, get a string from response, reverse the string and send it back to them
+###post a JSON to code2040, get a string from response, reverse the string and send it back to code2040 for validation
 require 'uri'
 require 'net/http'
 require 'json'
