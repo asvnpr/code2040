@@ -19,7 +19,7 @@ uri = URI.parse('http://challenge.code2040.org/api/reverse/validate')
 http = Net::HTTP.new(uri.host,uri.port)
 
 rev = string.body.to_str.reverse
-answer = {"token" => "57bbfceb05c5d034b1be3564c22c8c51","string" => "#{rev}"}
+answer = {"token" => "57bbfceb05c5d034b1be3564c22c8c51","string" => rev}
 
 #send JSON with reversed string and capture response
 response = http.post(uri.path, answer.to_json, json_headers)
